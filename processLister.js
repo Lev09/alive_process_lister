@@ -19,9 +19,8 @@ var getProcessList = function(sendList) {
 		function(error, stdout, stderr) {
 			if(stdout) {
 				var processes = stdout.split("\n");
-				
 				processes = _.map(processes, function(elem) {
-					return elem.replace(/\s+/g, '');
+					return elem.trim();
 				});
 				
 				writeToFile(processes);
@@ -50,4 +49,4 @@ var sendList = function(processes) {
 
 setInterval(function() {
 	getProcessList(sendList);
-}, 30000);
+}, 20000);
