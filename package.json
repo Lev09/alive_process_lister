@@ -1,0 +1,10 @@
+{
+	"name": "processLister",
+	"description": "list runed processes on machine",
+	"version": "0.0.1",
+	"private": true,
+	"dependencies": {
+		"underscore": "*",
+		"zmq": "*"
+	}
+}
