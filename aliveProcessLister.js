@@ -49,4 +49,4 @@ var sendList = function(processes) {
 
 setInterval(function() {
 	getProcessList(sendList);
-}, 20000);
+}, 60000);
