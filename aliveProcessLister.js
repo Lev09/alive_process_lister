@@ -2,15 +2,20 @@ var exec = require('child_process').exec;
 var fs = require('fs');
 var zmq = require('zmq');
 var _ = require('underscore');
+var argv = require('optimist')
+.default({
+	bind: 'tcp://*:5556'
+}).argv;
+
 
 var publisher = zmq.socket('pub');
-publisher.bind('tcp://*:5556', function(error) {
+publisher.bind(argv.bind, function(error) {
 	if(error) {
 		console.log(error);
 		process.exit(0);
 	}
 	else {
-		console.log('Binding on port: 5556');
+		console.log('Binding on ' + argv.bind);
 	}
 });
 
